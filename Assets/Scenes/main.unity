@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 450625941}
   - component: {fileID: 450625942}
   m_Layer: 0
-  m_Name: MainManager
+  m_Name: UserControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 450625940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d110623a642692246a42fbc2d8d89884, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c3cfe5d0dc8b4d4396d2ccf1d050edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BrickPrefab: {fileID: 897975713663390409, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
@@ -504,7 +504,6 @@ MonoBehaviour:
   ScoreText: {fileID: 188020406}
   maxPointsText: {fileID: 2078529056}
   GameOverText: {fileID: 474497238}
-  maxPoints: 0
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee19acfba77e9084fb4ce7ee7ff9e3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 450625942}
+  userControl: {fileID: 0}
 --- !u!1 &1288645155
 GameObject:
   m_ObjectHideFlags: 0
