@@ -11,7 +11,8 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance;
 
     public int maxPoints;
-    public string playerName;
+    public string maxPointsName;
+    public string lastName;
 
     private void Awake() 
     {
@@ -30,7 +31,8 @@ public class MainManager : MonoBehaviour
     class SaveDataUser
     {
         public int maxPoints;
-        public string playerName;
+        public string maxPointsName;
+        public string lastName;
     }
 
     public void SaveData(int m_Points)
@@ -39,29 +41,31 @@ public class MainManager : MonoBehaviour
         if (m_Points > maxPoints)
         {
             data.maxPoints = m_Points;
-        }
+            data.maxPointsName = lastName;
+        }        
         else 
         {
             data.maxPoints = maxPoints;
+            data.maxPointsName = maxPointsName;
         }
-        
-        data.playerName = playerName;        
-        
+        data.lastName = lastName;
+                        
         string json = JsonUtility.ToJson(data);
         
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
     public void LoadData()
-    {
-        string path = Application.persistentDataPath + "/savefile.json";
+    {        
+        string path = Application.persistentDataPath + "/savefile.json";        
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
             SaveDataUser data = JsonUtility.FromJson<SaveDataUser>(json);
 
             maxPoints = data.maxPoints;
-            playerName = data.playerName;
+            maxPointsName = data.maxPointsName;
+            lastName = data.lastName;
         }
     }
 

@@ -12,13 +12,14 @@ public class MenuUIHandler : MonoBehaviour
 {
     [SerializeField] InputField inputName;
     [SerializeField] TextMeshProUGUI scoreText;    
+    public string playerName;
 
     private void Start()
     {        
         if (MainManager.Instance != null)
         {
-            scoreText.text = "Best Score : " + MainManager.Instance.playerName + " : " + MainManager.Instance.maxPoints;
-            inputName.text = MainManager.Instance.playerName;
+            scoreText.text = "Best Score : " + MainManager.Instance.maxPointsName + " : " + MainManager.Instance.maxPoints;
+            inputName.text = MainManager.Instance.lastName;
         }
     }
 
@@ -39,8 +40,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void SavePlayerName()
     {
-        string playerName = inputName.text.ToString();
-        MainManager.Instance.playerName = playerName;
+        MainManager.Instance.lastName = inputName.text.ToString();
         MainManager.Instance.SaveData(0);
     }
 }
