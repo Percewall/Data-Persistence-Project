@@ -14,7 +14,7 @@ public class MenuUIHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;    
 
     private void Start()
-    {
+    {        
         if (MainManager.Instance != null)
         {
             scoreText.text = "Best Score : " + MainManager.Instance.playerName + " : " + MainManager.Instance.maxPoints;
@@ -23,7 +23,7 @@ public class MenuUIHandler : MonoBehaviour
     }
 
     public void StartNew()
-    {
+    { 
         SavePlayerName();
         SceneManager.LoadScene(1);
     }
@@ -40,12 +40,7 @@ public class MenuUIHandler : MonoBehaviour
     public void SavePlayerName()
     {
         string playerName = inputName.text.ToString();
-        Debug.Log(playerName);
-        MainManager.Instance.SaveData(0, playerName);
-    }
-
-    public void LoadPlayerName()
-    {
-        MainManager.Instance.LoadData();
+        MainManager.Instance.playerName = playerName;
+        MainManager.Instance.SaveData(0);
     }
 }

@@ -76,6 +76,11 @@ public class UserControl : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-        MainManager.Instance.SaveData(m_Points, MainManager.Instance.playerName);
+        MainManager.Instance.SaveData(m_Points);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

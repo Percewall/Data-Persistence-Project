@@ -33,14 +33,19 @@ public class MainManager : MonoBehaviour
         public string playerName;
     }
 
-    public void SaveData(int m_Points, string name)
+    public void SaveData(int m_Points)
     {
         SaveDataUser data = new SaveDataUser();
         if (m_Points > maxPoints)
         {
             data.maxPoints = m_Points;
         }
-        data.playerName = name;
+        else 
+        {
+            data.maxPoints = maxPoints;
+        }
+        
+        data.playerName = playerName;        
         
         string json = JsonUtility.ToJson(data);
         
